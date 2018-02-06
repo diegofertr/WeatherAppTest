@@ -10,9 +10,13 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SettingsPage }  from '../pages/settings/settings';
+import { GeolocationPage } from '../pages/geolocation/geolocation'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Geolocation } from '@ionic-native/geolocation';
+
+// Providers
 import { WeatherProvider } from '../providers/weather/weather';
 
 @NgModule({
@@ -22,7 +26,8 @@ import { WeatherProvider } from '../providers/weather/weather';
     ContactPage,
     HomePage,
     TabsPage,
-    SettingsPage
+    SettingsPage,
+    GeolocationPage
   ],
   imports: [
     BrowserModule,
@@ -37,13 +42,15 @@ import { WeatherProvider } from '../providers/weather/weather';
     ContactPage,
     HomePage,
     TabsPage,
-    SettingsPage
+    SettingsPage,
+    GeolocationPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    WeatherProvider
+    WeatherProvider,
+    Geolocation
   ]
 })
 export class AppModule {}
